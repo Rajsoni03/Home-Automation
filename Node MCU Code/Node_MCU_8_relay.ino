@@ -1,4 +1,5 @@
 #include <ESP8266WiFi.h>
+#include <EEPROM.h>
 #include <PubSubClient.h>
 
 
@@ -12,10 +13,12 @@
 #define Relay7            13  //D7
 #define Relay8            15  //D8
 
+#define btn               A0  //A0
+
 
 // Update these with values suitable for your network.
 const char* ssid = "Redmi Note 9 Pro Max";
-const char* password = "--------";
+const char* password = "12344322";
 const char* mqtt_server = "broker.emqx.io";
 //const char* username = "MQTT_USERNAME";
 //const char* pass = "MQTT_PASSWORD";
@@ -65,183 +68,139 @@ void setup_wifi() {
   digitalWrite(LED_BUILTIN, HIGH);
 }
 
-
-void RunRelay(byte* payload, int Relay, unsigned int length) {
-  for (int i = 0; i < length; i++) {
-    Serial.print((char)payload[i]);
-  }
-  Serial.println();
-  if ((char)payload[0] == '1')   {
-    digitalWrite(Relay, HIGH);   // Turn the LED on (Note that LOW is the voltage level
-  } else {
-    digitalWrite(Relay, LOW);  // Turn the LED off by making the voltage HIGH
-  }
-}
-
-
 void callback(char* topic, byte* payload, unsigned int length) {
-  Serial.print("Message arrived [");
-  Serial.print(topic);
-  Serial.print("] ");
+  //  Serial.print("Message arrived [");
+  //  Serial.print(topic);
+  //  Serial.print("] ");
 
   if (strstr(topic, sub1)) {
-    RunRelay(payload, Relay1, length);
-  }
-  else if ( strstr(topic, sub2)) {
-    RunRelay(payload, Relay2, length);
-  }
-  else if ( strstr(topic, sub3)) {
-    RunRelay(payload, Relay3, length);
-  }
-  else if ( strstr(topic, sub4)) {
-    RunRelay(payload, Relay4, length);
-  }
-  else if ( strstr(topic, sub5)) {
-    RunRelay(payload, Relay5, length);
-  }
-  else if ( strstr(topic, sub6)) {
-    RunRelay(payload, Relay6, length);
-  }
-  else if ( strstr(topic, sub7)) {
-    RunRelay(payload, Relay7, length);
-  }
-  else if ( strstr(topic, sub8)) {
-    RunRelay(payload, Relay8, length);
-  }
-  else  {
-    Serial.println("unsubscribed topic");
-  }
-
-
-  /*
-    if (strstr(topic, sub1)) {
     for (int i = 0; i < length; i++) {
       Serial.print((char)payload[i]);
     }
     Serial.println();
     if ((char)payload[0] == '1')   {
-      digitalWrite(Relay1, HIGH);   // Turn the LED on (Note that LOW is the voltage level
+      digitalWrite(Relay1, 1);   // Turn the LED on (Note that LOW is the voltage level
+      EEPROM.write(1, 1);
+      Serial.print("Relay1 on");
     } else {
-      digitalWrite(Relay1, LOW);  // Turn the LED off by making the voltage HIGH
+      digitalWrite(Relay1, 0);  // Turn the LED off by making the voltage HIGH
+      EEPROM.write(1, 0);
+      Serial.print("Relay1 off");
     }
-    }
-
-    else if ( strstr(topic, sub2))
-    {
+  }
+  else if ( strstr(topic, sub2))
+  {
     for (int i = 0; i < length; i++) {
       Serial.print((char)payload[i]);
     }
     Serial.println();
-    // Switch on the LED if an 1 was received as first character
     if ((char)payload[0] == '1') {
-      digitalWrite(Relay2, HIGH);   // Turn the LED on (Note that LOW is the voltage level
-      // but actually the LED is on; this is because
-      // it is active low on the ESP-01)
+      digitalWrite(Relay2, 1);   // Turn the LED on (Note that LOW is the voltage level
+      EEPROM.write(2, 1);
+      Serial.print("Relay2 on");
     } else {
-      digitalWrite(Relay2, LOW);  // Turn the LED off by making the voltage HIGH
+      digitalWrite(Relay2, 0);  // Turn the LED off by making the voltage HIGH
+      EEPROM.write(2, 0);
+      Serial.print("Relay2 off");
     }
-    }
-    else if ( strstr(topic, sub3))
-    {
+  }
+  else if ( strstr(topic, sub3))  {
     for (int i = 0; i < length; i++) {
       Serial.print((char)payload[i]);
     }
     Serial.println();
-    // Switch on the LED if an 1 was received as first character
     if ((char)payload[0] == '1') {
-      digitalWrite(Relay3, HIGH);   // Turn the LED on (Note that LOW is the voltage level
-      // but actually the LED is on; this is because
-      // it is active low on the ESP-01)
+      digitalWrite(Relay3, 1);   // Turn the LED on (Note that LOW is the voltage level
+      EEPROM.write(3, 1);
+      Serial.print("Relay3 on");
     } else {
-      digitalWrite(Relay3, LOW);  // Turn the LED off by making the voltage HIGH
+      digitalWrite(Relay3, 0);  // Turn the LED off by making the voltage HIGH
+      EEPROM.write(3, 0);
+      Serial.print("Relay3 off");
     }
-    }
-    else if ( strstr(topic, sub4))
-    {
+  }
+  else if ( strstr(topic, sub4))  {
     for (int i = 0; i < length; i++) {
       Serial.print((char)payload[i]);
     }
     Serial.println();
-    // Switch on the LED if an 1 was received as first character
     if ((char)payload[0] == '1') {
-      digitalWrite(Relay4, LOW);   // Turn the LED on (Note that LOW is the voltage level
-      // but actually the LED is on; this is because
-      // it is active low on the ESP-01)
+      digitalWrite(Relay4, 0);   // Turn the LED on (Note that LOW is the voltage level
+      EEPROM.write(4, 0);
+      Serial.print("Relay4 on");
     } else {
-      digitalWrite(Relay4, HIGH);  // Turn the LED off by making the voltage HIGH
+      digitalWrite(Relay4, 1);  // Turn the LED off by making the voltage HIGH
+      EEPROM.write(4, 1);
+      Serial.print("Relay4 off");
     }
-    }
-    else if ( strstr(topic, sub5))
-    {
+  }
+  else if ( strstr(topic, sub5))  {
     for (int i = 0; i < length; i++) {
       Serial.print((char)payload[i]);
     }
     Serial.println();
-    // Switch on the LED if an 1 was received as first character
     if ((char)payload[0] == '1') {
-      digitalWrite(Relay5, HIGH);   // Turn the LED on (Note that LOW is the voltage level
-      // but actually the LED is on; this is because
-      // it is active low on the ESP-01)
+      digitalWrite(Relay5, 1);   // Turn the LED on (Note that LOW is the voltage level
+      EEPROM.write(5, 1);
+      Serial.print("Relay5 on");
     } else {
-      digitalWrite(Relay5, LOW);  // Turn the LED off by making the voltage HIGH
+      digitalWrite(Relay5, 0);  // Turn the LED off by making the voltage HIGH
+      EEPROM.write(5, 0);
+      Serial.print("Relay5 off");
     }
-    }
-    else if ( strstr(topic, sub6))
-    {
+  }
+  else if ( strstr(topic, sub6))  {
     for (int i = 0; i < length; i++) {
       Serial.print((char)payload[i]);
     }
     Serial.println();
-    // Switch on the LED if an 1 was received as first character
     if ((char)payload[0] == '1') {
-      digitalWrite(Relay6, HIGH);   // Turn the LED on (Note that LOW is the voltage level
-      // but actually the LED is on; this is because
-      // it is active low on the ESP-01)
+      digitalWrite(Relay6, 1);   // Turn the LED on (Note that LOW is the voltage level
+      EEPROM.write(6, 1);
+      Serial.print("Relay6 on");
     } else {
-      digitalWrite(Relay6, LOW);  // Turn the LED off by making the voltage HIGH
+      digitalWrite(Relay6, 0);  // Turn the LED off by making the voltage HIGH
+      EEPROM.write(6, 0);
+      Serial.print("Relay6 off");
     }
-    }
-    else if ( strstr(topic, sub7))
-    {
+  }
+  else if ( strstr(topic, sub7))  {
     for (int i = 0; i < length; i++) {
       Serial.print((char)payload[i]);
     }
     Serial.println();
-    // Switch on the LED if an 1 was received as first character
     if ((char)payload[0] == '1') {
-      digitalWrite(Relay7, HIGH);   // Turn the LED on (Note that LOW is the voltage level
-      // but actually the LED is on; this is because
-      // it is active low on the ESP-01)
+      digitalWrite(Relay7, 1);   // Turn the LED on (Note that LOW is the voltage level
+      EEPROM.write(7, 1);
+      Serial.print("Relay7 on");
     } else {
-      digitalWrite(Relay7, LOW);  // Turn the LED off by making the voltage HIGH
+      digitalWrite(Relay7, 0);  // Turn the LED off by making the voltage HIGH
+      EEPROM.write(7, 0);
+      Serial.print("Relay7 off");
     }
-    }
-    else if ( strstr(topic, sub8))
-    {
+  }
+  else if ( strstr(topic, sub8))  {
     for (int i = 0; i < length; i++) {
       Serial.print((char)payload[i]);
     }
     Serial.println();
-    // Switch on the LED if an 1 was received as first character
     if ((char)payload[0] == '1') {
-      digitalWrite(Relay8, HIGH);   // Turn the LED on (Note that LOW is the voltage level
-      // but actually the LED is on; this is because
-      // it is active low on the ESP-01)
+      digitalWrite(Relay8, 1);   // Turn the LED on (Note that LOW is the voltage level
+      EEPROM.write(8, 1);
+      Serial.print("Relay8 on");
     } else {
-      digitalWrite(Relay8, LOW);  // Turn the LED off by making the voltage HIGH
+      digitalWrite(Relay8, 0);  // Turn the LED off by making the voltage HIGH
+      EEPROM.write(8, 0);
+      Serial.print("Relay8 off");
     }
-    }
-
-    else
-    {
+  }
+  else {
     Serial.println("unsubscribed topic");
-    }
-  */
+  }
+  EEPROM.commit();
 }
 
-
 // Connecting to MQTT broker
-
 void reconnect() {
   // Loop until we're reconnected
   while (!client.connected()) {
@@ -269,15 +228,48 @@ void reconnect() {
     else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
-      Serial.println(" try again in 5 seconds");
+      Serial.println(" try again in 1 seconds");
       // Wait 5 seconds before retrying
-      delay(5000);
+      delay(1000);
     }
   }
 }
 
+void recall() {
+  int flag1 = EEPROM.read(1);
+  int flag2 = EEPROM.read(2);
+  int flag3 = EEPROM.read(3);
+  int flag4 = EEPROM.read(4);
+  int flag5 = EEPROM.read(5);
+  int flag6 = EEPROM.read(6);
+  int flag7 = EEPROM.read(7);
+  int flag8 = EEPROM.read(8);
+
+  digitalWrite(Relay1, flag1);
+  digitalWrite(Relay2, flag2);
+  digitalWrite(Relay3, flag3);
+  digitalWrite(Relay4, flag4);
+  digitalWrite(Relay5, flag5);
+  digitalWrite(Relay6, flag6);
+  digitalWrite(Relay7, flag7);
+  digitalWrite(Relay8, flag8);
+}
+
+void manual(int state) {
+  digitalWrite(Relay1, state);
+  digitalWrite(Relay2, state);
+  digitalWrite(Relay3, state);
+  digitalWrite(Relay4, 1 - state);
+  digitalWrite(Relay5, state);
+  digitalWrite(Relay6, state);
+  digitalWrite(Relay7, state);
+  digitalWrite(Relay8, state);
+}
 
 void setup() {
+  EEPROM.begin(512);
+  Serial.begin(115200);
+
   pinMode(Relay1, OUTPUT);
   pinMode(Relay2, OUTPUT);
   pinMode(Relay3, OUTPUT);
@@ -287,12 +279,17 @@ void setup() {
   pinMode(Relay7, OUTPUT);
   pinMode(Relay8, OUTPUT);
 
+  pinMode(btn, INPUT);
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, LOW);
-
-  Serial.begin(115200);
+  
+  if (analogRead(btn) > 800) {
+    manual(1);
+  } else{
+    recall();
+  }
+  
   setup_wifi();
-
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
 }
