@@ -17,9 +17,9 @@
 
 
 // Update these with values suitable for your network.
-const char* ssid = "Redmi Note 9 Pro Max";
-const char* password = "12344322";
-const char* mqtt_server = "broker.emqx.io";
+const char* ssid = "_____";
+const char* password = "_____";
+const char* mqtt_server = "_____";
 //const char* username = "MQTT_USERNAME";
 //const char* pass = "MQTT_PASSWORD";
 
