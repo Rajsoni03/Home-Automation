@@ -1,1 +1,859 @@
-[{"id":"a8ee914446c339de","type":"tab","label":"Flow 1","disabled":false,"info":""},{"id":"d49abfb9a5333ab0","type":"nora-switch","z":"a8ee914446c339de","devicename":"Monitor","roomhint":"Office","name":"Monitor","passthru":false,"nora":"229dac3cc60fd87f","topic":"","onvalue":"1","onvalueType":"num","offvalue":"0","offvalueType":"num","x":320,"y":420,"wires":[["528863e0.79eb54","528863e0.79eb54"]]},{"id":"410833864f2ab4fa","type":"nora-switch","z":"a8ee914446c339de","devicename":"RGB Light","roomhint":"Office","name":"RGB Light","passthru":false,"nora":"229dac3cc60fd87f","topic":"","onvalue":"1","onvalueType":"num","offvalue":"0","offvalueType":"num","x":330,"y":320,"wires":[["2b95a165.3c9426","2b95a165.3c9426"]]},{"id":"a03ccfdae96c4fcd","type":"nora-switch","z":"a8ee914446c339de","devicename":"LED Strip","roomhint":"Office","name":"LED Strip","passthru":false,"nora":"229dac3cc60fd87f","topic":"","onvalue":"1","onvalueType":"num","offvalue":"0","offvalueType":"num","x":320,"y":220,"wires":[["80ec7e53.05efd8","80ec7e53.05efd8"]]},{"id":"5b8a9808c4aa59f9","type":"nora-switch","z":"a8ee914446c339de","devicename":"Laptop Charger","roomhint":"Office","name":"Laptop Charger","passthru":false,"nora":"229dac3cc60fd87f","topic":"","onvalue":"1","onvalueType":"num","offvalue":"0","offvalueType":"num","x":340,"y":520,"wires":[["60c88929435bdd2c","60c88929435bdd2c"]]},{"id":"4d500cf3764dc4a3","type":"nora-switch","z":"a8ee914446c339de","devicename":"Mobile Charger","roomhint":"Office","name":"Mobile Charger","passthru":false,"nora":"229dac3cc60fd87f","topic":"","onvalue":"1","onvalueType":"num","offvalue":"0","offvalueType":"num","x":340,"y":620,"wires":[["806a7dc7d71a7471","806a7dc7d71a7471"]]},{"id":"39b1867eeffed048","type":"nora-switch","z":"a8ee914446c339de","devicename":"Table Lamp","roomhint":"Office","name":"Table Lamp","passthru":false,"nora":"229dac3cc60fd87f","topic":"","onvalue":"1","onvalueType":"num","offvalue":"0","offvalueType":"num","x":330,"y":120,"wires":[["ef25ddc2d862018e","ef25ddc2d862018e"]]},{"id":"d43b8ed43b907810","type":"nora-switch","z":"a8ee914446c339de","devicename":"Home Theatre","roomhint":"Office","name":"Home Theatre","passthru":false,"nora":"229dac3cc60fd87f","topic":"","onvalue":"1","onvalueType":"num","offvalue":"0","offvalueType":"num","x":340,"y":720,"wires":[["80897a713f7b9827","80897a713f7b9827"]]},{"id":"80ec7e53.05efd8","type":"ui_switch","z":"a8ee914446c339de","name":"","label":"LED Strip","tooltip":"","group":"d7c12b74.277828","order":1,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"","topicType":"str","style":"","onvalue":"1","onvalueType":"num","onicon":"","oncolor":"","offvalue":"0","offvalueType":"num","officon":"","offcolor":"","animate":true,"className":"","x":560,"y":220,"wires":[["a03ccfdae96c4fcd","78158c3389c236f9","a03ccfdae96c4fcd"]]},{"id":"2b95a165.3c9426","type":"ui_switch","z":"a8ee914446c339de","name":"","label":"RGB Light","tooltip":"","group":"d7c12b74.277828","order":2,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"","topicType":"str","style":"","onvalue":"1","onvalueType":"num","onicon":"","oncolor":"","offvalue":"0","offvalueType":"num","officon":"","offcolor":"","animate":true,"className":"","x":570,"y":320,"wires":[["410833864f2ab4fa","410833864f2ab4fa","5801187159d0762c"]]},{"id":"528863e0.79eb54","type":"ui_switch","z":"a8ee914446c339de","name":"","label":"Monitor","tooltip":"","group":"d7c12b74.277828","order":3,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"","topicType":"str","style":"","onvalue":"1","onvalueType":"num","onicon":"","oncolor":"","offvalue":"0","offvalueType":"num","officon":"","offcolor":"","animate":true,"className":"","x":560,"y":420,"wires":[["d49abfb9a5333ab0","d49abfb9a5333ab0","a5bd6a4e27a4b2b8"]]},{"id":"60c88929435bdd2c","type":"ui_switch","z":"a8ee914446c339de","name":"","label":"Laptop Charger","tooltip":"","group":"d7c12b74.277828","order":4,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"","topicType":"str","style":"","onvalue":"1","onvalueType":"num","onicon":"","oncolor":"","offvalue":"0","offvalueType":"num","officon":"","offcolor":"","animate":false,"className":"","x":580,"y":520,"wires":[["5b8a9808c4aa59f9","5b8a9808c4aa59f9","dd384321e167c9bc"]]},{"id":"806a7dc7d71a7471","type":"ui_switch","z":"a8ee914446c339de","name":"","label":"Mobile Charger","tooltip":"","group":"d7c12b74.277828","order":5,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"","topicType":"str","style":"","onvalue":"1","onvalueType":"num","onicon":"","oncolor":"","offvalue":"0","offvalueType":"num","officon":"","offcolor":"","animate":false,"className":"","x":580,"y":620,"wires":[["4d500cf3764dc4a3","d15251f6a433e20b","4d500cf3764dc4a3"]]},{"id":"ef25ddc2d862018e","type":"ui_switch","z":"a8ee914446c339de","name":"","label":"Table Lamp","tooltip":"","group":"d7c12b74.277828","order":6,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"","topicType":"str","style":"","onvalue":"1","onvalueType":"num","onicon":"","oncolor":"","offvalue":"0","offvalueType":"num","officon":"","offcolor":"","animate":false,"className":"","x":550,"y":120,"wires":[["39b1867eeffed048","72dd059ba1bd63a4","39b1867eeffed048"]]},{"id":"80897a713f7b9827","type":"ui_switch","z":"a8ee914446c339de","name":"","label":"Home Thertre","tooltip":"","group":"d7c12b74.277828","order":7,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"","topicType":"str","style":"","onvalue":"1","onvalueType":"num","onicon":"","oncolor":"","offvalue":"0","offvalueType":"num","officon":"","offcolor":"","animate":false,"className":"","x":580,"y":720,"wires":[["d43b8ed43b907810","4c0d48432783f43e","d43b8ed43b907810"]]},{"id":"78158c3389c236f9","type":"mqtt out","z":"a8ee914446c339de","name":"","topic":"office/relay4","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"93c1ee1ee2b885af","x":790,"y":220,"wires":[]},{"id":"5801187159d0762c","type":"mqtt out","z":"a8ee914446c339de","name":"","topic":"office/relay8","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"93c1ee1ee2b885af","x":790,"y":320,"wires":[]},{"id":"a5bd6a4e27a4b2b8","type":"mqtt out","z":"a8ee914446c339de","name":"","topic":"office/relay5","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"93c1ee1ee2b885af","x":790,"y":420,"wires":[]},{"id":"dd384321e167c9bc","type":"mqtt out","z":"a8ee914446c339de","name":"","topic":"office/relay1","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"93c1ee1ee2b885af","x":790,"y":520,"wires":[]},{"id":"d15251f6a433e20b","type":"mqtt out","z":"a8ee914446c339de","name":"","topic":"office/relay2","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"93c1ee1ee2b885af","x":790,"y":620,"wires":[]},{"id":"72dd059ba1bd63a4","type":"mqtt out","z":"a8ee914446c339de","name":"","topic":"office/relay7","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"93c1ee1ee2b885af","x":790,"y":120,"wires":[]},{"id":"4c0d48432783f43e","type":"mqtt out","z":"a8ee914446c339de","name":"","topic":"office/relay3","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"93c1ee1ee2b885af","x":790,"y":720,"wires":[]},{"id":"229dac3cc60fd87f","type":"nora-config","name":"nora config","group":"","notify":false},{"id":"d7c12b74.277828","type":"ui_group","name":"Controls","tab":"f57a184e.4f4fa","order":1,"disp":true,"width":"6","collapse":false,"className":""},{"id":"93c1ee1ee2b885af","type":"mqtt-broker","name":"Cloud MQTT","broker":"broker.emqx.io","port":"1883","clientid":"","usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willPayload":"","willMsg":{},"sessionExpiry":""},{"id":"f57a184e.4f4fa","type":"ui_tab","name":"Office","icon":"dashboard","disabled":false,"hidden":false}]
+[
+    {
+        "id": "dc682c287d7214bc",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "925a8d1905c199f9",
+        "type": "google-home",
+        "z": "dc682c287d7214bc",
+        "conf": "3a692403905caf38",
+        "device": "37406",
+        "acknowledge": true,
+        "name": "Speakers",
+        "topic": "",
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "b7b2a7e1242d6f3a"
+            ]
+        ]
+    },
+    {
+        "id": "b755f906ebd23625",
+        "type": "mqtt out",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "topic": "raj_office/relay3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0d360e7b0956a7ad",
+        "x": 1080,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "b7b2a7e1242d6f3a",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "json to int",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\n// Output msg.payload will be 1 or 0\n\nif (msg.payload.params && typeof msg.payload.params.on === 'boolean') {\n    msg.payload = msg.payload.params.on ? 1 : 0; // Set payload based on 'on' value\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: 'params.on' not found or not a boolean\");\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 180,
+        "wires": [
+            [
+                "59d41e2fe99d9fee"
+            ]
+        ]
+    },
+    {
+        "id": "73d55caf8e208560",
+        "type": "ui_switch",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "label": "Ceiling Light",
+        "tooltip": "",
+        "group": "e769c46977393551",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 750,
+        "y": 540,
+        "wires": [
+            [
+                "b755f906ebd23625",
+                "3c484452d07d7699"
+            ]
+        ]
+    },
+    {
+        "id": "703c64e7580c49fd",
+        "type": "mqtt out",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "topic": "raj_office/relay2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0d360e7b0956a7ad",
+        "x": 1080,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "59d41e2fe99d9fee",
+        "type": "ui_switch",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "label": "Speakers",
+        "tooltip": "",
+        "group": "e769c46977393551",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 740,
+        "y": 180,
+        "wires": [
+            [
+                "703c64e7580c49fd",
+                "73e76c1307871bd3"
+            ]
+        ]
+    },
+    {
+        "id": "d735a826edfa0e77",
+        "type": "mqtt out",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "topic": "raj_office/relay5",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0d360e7b0956a7ad",
+        "x": 1080,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ecd7297a690e9f0e",
+        "type": "ui_switch",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "label": "Mobile Charger",
+        "tooltip": "",
+        "group": "e769c46977393551",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 760,
+        "y": 360,
+        "wires": [
+            [
+                "d735a826edfa0e77",
+                "d63fbae632032326"
+            ]
+        ]
+    },
+    {
+        "id": "75e8cee1fa04cf55",
+        "type": "mqtt out",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "topic": "raj_office/relay8",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0d360e7b0956a7ad",
+        "x": 1080,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "a29beb3d34949ab3",
+        "type": "ui_switch",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "label": "Laptop Charger",
+        "tooltip": "",
+        "group": "e769c46977393551",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 760,
+        "y": 740,
+        "wires": [
+            [
+                "75e8cee1fa04cf55",
+                "6ca6b4c9ad2660a7"
+            ]
+        ]
+    },
+    {
+        "id": "9ec6d161a6d5e621",
+        "type": "google-home",
+        "z": "dc682c287d7214bc",
+        "conf": "3a692403905caf38",
+        "device": "19277",
+        "acknowledge": true,
+        "name": "Mobile Charger",
+        "topic": "",
+        "x": 200,
+        "y": 360,
+        "wires": [
+            [
+                "aa5c8187c3e642a6"
+            ]
+        ]
+    },
+    {
+        "id": "aa5c8187c3e642a6",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "json to int",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\n// Output msg.payload will be 1 or 0\n\nif (msg.payload.params && typeof msg.payload.params.on === 'boolean') {\n    msg.payload = msg.payload.params.on ? 1 : 0; // Set payload based on 'on' value\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: 'params.on' not found or not a boolean\");\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 360,
+        "wires": [
+            [
+                "ecd7297a690e9f0e"
+            ]
+        ]
+    },
+    {
+        "id": "8f91fed52b9011e1",
+        "type": "google-home-response",
+        "z": "dc682c287d7214bc",
+        "conf": "3a692403905caf38",
+        "device": "37406",
+        "name": "Speakers",
+        "x": 1340,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "73e76c1307871bd3",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "int to json ",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"payload\": 1} or {\"payload\": 0}\n\n// Output msg will be:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\nif (msg.payload === 1) {\n    msg.payload = {\n        command: \"action.devices.commands.OnOff\",\n        params: {\n            on: true,\n            online: true\n        }\n    };\n} else if (msg.payload === 0) {\n    msg.payload = {\n        command: \"action.devices.commands.OnOff\",\n        params: {\n            on: false,\n            online: true\n        }\n    };\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: payload should be 1 or 0\");\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 140,
+        "wires": [
+            [
+                "8f91fed52b9011e1"
+            ]
+        ]
+    },
+    {
+        "id": "a19ff18ee03beba9",
+        "type": "google-home",
+        "z": "dc682c287d7214bc",
+        "conf": "3a692403905caf38",
+        "device": "37407",
+        "acknowledge": true,
+        "name": "Ceiling Light",
+        "topic": "",
+        "x": 190,
+        "y": 540,
+        "wires": [
+            [
+                "aaa7f407a2b484ee"
+            ]
+        ]
+    },
+    {
+        "id": "aaa7f407a2b484ee",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "json to int",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\n// Output msg.payload will be 1 or 0\n\nif (msg.payload.params && typeof msg.payload.params.on === 'boolean') {\n    msg.payload = msg.payload.params.on ? 1 : 0; // Set payload based on 'on' value\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: 'params.on' not found or not a boolean\");\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 540,
+        "wires": [
+            [
+                "73d55caf8e208560"
+            ]
+        ]
+    },
+    {
+        "id": "01eb83c2572ead8f",
+        "type": "google-home",
+        "z": "dc682c287d7214bc",
+        "conf": "3a692403905caf38",
+        "device": "37408",
+        "acknowledge": true,
+        "name": "Laptop Charger",
+        "topic": "",
+        "x": 200,
+        "y": 740,
+        "wires": [
+            [
+                "9d1aa9adeb3c87a1"
+            ]
+        ]
+    },
+    {
+        "id": "9d1aa9adeb3c87a1",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "json to int",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\n// Output msg.payload will be 1 or 0\n\nif (msg.payload.params && typeof msg.payload.params.on === 'boolean') {\n    msg.payload = msg.payload.params.on ? 1 : 0; // Set payload based on 'on' value\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: 'params.on' not found or not a boolean\");\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 740,
+        "wires": [
+            [
+                "a29beb3d34949ab3"
+            ]
+        ]
+    },
+    {
+        "id": "d63fbae632032326",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "int to json ",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"payload\": 1} or {\"payload\": 0}\n\n// Output msg will be:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\nif (msg.payload === 1) {\n    msg.payload = {\n        command: \"action.devices.commands.OnOff\",\n        params: {\n            on: true,\n            online: true\n        }\n    };\n} else if (msg.payload === 0) {\n    msg.payload = {\n        command: \"action.devices.commands.OnOff\",\n        params: {\n            on: false,\n            online: true\n        }\n    };\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: payload should be 1 or 0\");\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 320,
+        "wires": [
+            [
+                "1eb59b9785f997f1"
+            ]
+        ]
+    },
+    {
+        "id": "1eb59b9785f997f1",
+        "type": "google-home-response",
+        "z": "dc682c287d7214bc",
+        "conf": "3a692403905caf38",
+        "device": "19277",
+        "name": "Mobile Charger",
+        "x": 1360,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "3c484452d07d7699",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "int to json ",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"payload\": 1} or {\"payload\": 0}\n\n// Output msg will be:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\nif (msg.payload === 1) {\n    msg.payload = {\n        command: \"action.devices.commands.OnOff\",\n        params: {\n            on: true,\n            online: true\n        }\n    };\n} else if (msg.payload === 0) {\n    msg.payload = {\n        command: \"action.devices.commands.OnOff\",\n        params: {\n            on: false,\n            online: true\n        }\n    };\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: payload should be 1 or 0\");\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 500,
+        "wires": [
+            [
+                "92f80c04c49080ce"
+            ]
+        ]
+    },
+    {
+        "id": "92f80c04c49080ce",
+        "type": "google-home-response",
+        "z": "dc682c287d7214bc",
+        "conf": "3a692403905caf38",
+        "device": "37407",
+        "name": "Ceiling Light",
+        "x": 1350,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "6ca6b4c9ad2660a7",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "int to json ",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"payload\": 1} or {\"payload\": 0}\n\n// Output msg will be:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\nif (msg.payload === 1) {\n    msg.payload = {\n        command: \"action.devices.commands.OnOff\",\n        params: {\n            on: true,\n            online: true\n        }\n    };\n} else if (msg.payload === 0) {\n    msg.payload = {\n        command: \"action.devices.commands.OnOff\",\n        params: {\n            on: false,\n            online: true\n        }\n    };\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: payload should be 1 or 0\");\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 700,
+        "wires": [
+            [
+                "2f2e99b3ba69eff7"
+            ]
+        ]
+    },
+    {
+        "id": "2f2e99b3ba69eff7",
+        "type": "google-home-response",
+        "z": "dc682c287d7214bc",
+        "conf": "3a692403905caf38",
+        "device": "37408",
+        "name": "Laptop Charger",
+        "x": 1360,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "d21cf29f6a04a9e3",
+        "type": "mqtt out",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "topic": "raj_office/relay7",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0d360e7b0956a7ad",
+        "x": 720,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "3f33101c42891ea7",
+        "type": "ui_switch",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "label": "Extra2",
+        "tooltip": "",
+        "group": "e769c46977393551",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 370,
+        "y": 1360,
+        "wires": [
+            [
+                "d21cf29f6a04a9e3"
+            ]
+        ]
+    },
+    {
+        "id": "aa87e36f11b87696",
+        "type": "ui_switch",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "label": "Extra1",
+        "tooltip": "",
+        "group": "e769c46977393551",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 370,
+        "y": 1280,
+        "wires": [
+            [
+                "580f9e9f0b92b81a"
+            ]
+        ]
+    },
+    {
+        "id": "580f9e9f0b92b81a",
+        "type": "mqtt out",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "topic": "raj_office/relay6",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0d360e7b0956a7ad",
+        "x": 720,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "a8bfa859b66d9e34",
+        "type": "mqtt out",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "topic": "raj_office/relay1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0d360e7b0956a7ad",
+        "x": 720,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "5a0b358b0e0d648c",
+        "type": "ui_switch",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "label": "Something",
+        "tooltip": "",
+        "group": "e769c46977393551",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 390,
+        "y": 1200,
+        "wires": [
+            [
+                "a8bfa859b66d9e34"
+            ]
+        ]
+    },
+    {
+        "id": "fe4c6a6d3b528485",
+        "type": "mqtt out",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "topic": "raj_office/relay4",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0d360e7b0956a7ad",
+        "x": 1080,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "c60b7b529232abaf",
+        "type": "ui_switch",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "label": "TV Light",
+        "tooltip": "",
+        "group": "e769c46977393551",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 740,
+        "y": 940,
+        "wires": [
+            [
+                "fe4c6a6d3b528485",
+                "fbe66d3dafcbc4a2"
+            ]
+        ]
+    },
+    {
+        "id": "270d1c320983ee90",
+        "type": "google-home",
+        "z": "dc682c287d7214bc",
+        "conf": "3a692403905caf38",
+        "device": "37409",
+        "acknowledge": true,
+        "name": "TV Light",
+        "topic": "",
+        "x": 180,
+        "y": 940,
+        "wires": [
+            [
+                "14e387be129bfff1"
+            ]
+        ]
+    },
+    {
+        "id": "14e387be129bfff1",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "json to int",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\n// Output msg.payload will be 1 or 0\n\nif (msg.payload.params && typeof msg.payload.params.on === 'boolean') {\n    msg.payload = msg.payload.params.on ? 1 : 0; // Set payload based on 'on' value\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: 'params.on' not found or not a boolean\");\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 940,
+        "wires": [
+            [
+                "c60b7b529232abaf"
+            ]
+        ]
+    },
+    {
+        "id": "fbe66d3dafcbc4a2",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "int to json ",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"payload\": 1} or {\"payload\": 0}\n\n// Output msg will be:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\nif (msg.payload === 1) {\n    msg.payload = {\n        command: \"action.devices.commands.OnOff\",\n        params: {\n            on: true,\n            online: true\n        }\n    };\n} else if (msg.payload === 0) {\n    msg.payload = {\n        command: \"action.devices.commands.OnOff\",\n        params: {\n            on: false,\n            online: true\n        }\n    };\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: payload should be 1 or 0\");\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 900,
+        "wires": [
+            [
+                "af661fc47acfdc2b"
+            ]
+        ]
+    },
+    {
+        "id": "af661fc47acfdc2b",
+        "type": "google-home-response",
+        "z": "dc682c287d7214bc",
+        "conf": "3a692403905caf38",
+        "device": "37409",
+        "name": "TV Light",
+        "x": 1340,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "65c12c04b46e8c8d",
+        "type": "google-home",
+        "z": "dc682c287d7214bc",
+        "conf": "3a692403905caf38",
+        "device": "37410",
+        "acknowledge": true,
+        "name": "Moon Light",
+        "topic": "",
+        "x": 350,
+        "y": 1100,
+        "wires": [
+            [
+                "bcad05d6d0f4b575"
+            ]
+        ]
+    },
+    {
+        "id": "bcad05d6d0f4b575",
+        "type": "debug",
+        "z": "dc682c287d7214bc",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "3a692403905caf38",
+        "type": "google-home-conf",
+        "username": "Rajsoni03"
+    },
+    {
+        "id": "0d360e7b0956a7ad",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "3",
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e769c46977393551",
+        "type": "ui_group",
+        "name": "Home",
+        "tab": "be5eefa82ee0f737",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "be5eefa82ee0f737",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
