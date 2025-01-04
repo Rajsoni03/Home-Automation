@@ -25,14 +25,14 @@ const char* mqtt_server = "_____";
 
 
 // Subscribed Topics
-#define sub1 "office/relay1"
-#define sub2 "office/relay2"
-#define sub3 "office/relay3"
-#define sub4 "office/relay4"
-#define sub5 "office/relay5"
-#define sub6 "office/relay6"
-#define sub7 "office/relay7"
-#define sub8 "office/relay8"
+#define sub1 "raj_office/relay1"
+#define sub2 "raj_office/relay2"
+#define sub3 "raj_office/relay3"
+#define sub4 "raj_office/relay4"
+#define sub5 "raj_office/relay5"
+#define sub6 "raj_office/relay6"
+#define sub7 "raj_office/relay7"
+#define sub8 "raj_office/relay8"
 
 
 WiFiClient espClient;
