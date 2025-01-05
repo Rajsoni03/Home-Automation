@@ -2,7 +2,7 @@
     {
         "id": "dc682c287d7214bc",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Home",
         "disabled": false,
         "info": "",
         "env": []
@@ -505,8 +505,8 @@
         "correl": "",
         "expiry": "",
         "broker": "0d360e7b0956a7ad",
-        "x": 720,
-        "y": 1360,
+        "x": 620,
+        "y": 2200,
         "wires": []
     },
     {
@@ -535,8 +535,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 370,
-        "y": 1360,
+        "x": 270,
+        "y": 2200,
         "wires": [
             [
                 "d21cf29f6a04a9e3"
@@ -569,8 +569,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 370,
-        "y": 1280,
+        "x": 270,
+        "y": 2120,
         "wires": [
             [
                 "580f9e9f0b92b81a"
@@ -591,8 +591,8 @@
         "correl": "",
         "expiry": "",
         "broker": "0d360e7b0956a7ad",
-        "x": 720,
-        "y": 1280,
+        "x": 620,
+        "y": 2120,
         "wires": []
     },
     {
@@ -609,8 +609,8 @@
         "correl": "",
         "expiry": "",
         "broker": "0d360e7b0956a7ad",
-        "x": 720,
-        "y": 1200,
+        "x": 620,
+        "y": 2040,
         "wires": []
     },
     {
@@ -639,8 +639,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 390,
-        "y": 1200,
+        "x": 290,
+        "y": 2040,
         "wires": [
             [
                 "a8bfa859b66d9e34"
@@ -670,9 +670,9 @@
         "type": "ui_switch",
         "z": "dc682c287d7214bc",
         "name": "",
-        "label": "TV Light",
+        "label": "TV Light Power",
         "tooltip": "",
-        "group": "e769c46977393551",
+        "group": "5514a91992dea871",
         "order": 0,
         "width": 0,
         "height": 0,
@@ -691,7 +691,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 740,
+        "x": 760,
         "y": 940,
         "wires": [
             [
@@ -710,7 +710,7 @@
         "name": "TV Light",
         "topic": "",
         "x": 180,
-        "y": 940,
+        "y": 1020,
         "wires": [
             [
                 "14e387be129bfff1"
@@ -722,7 +722,7 @@
         "type": "function",
         "z": "dc682c287d7214bc",
         "name": "json to int",
-        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\n// Output msg.payload will be 1 or 0\n\nif (msg.payload.params && typeof msg.payload.params.on === 'boolean') {\n    msg.payload = msg.payload.params.on ? 1 : 0; // Set payload based on 'on' value\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: 'params.on' not found or not a boolean\");\n}\n\nreturn msg;",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\n// Output msg.payload will be 1 or 0\n\nif (msg.payload.params && typeof msg.payload.params.on === 'boolean') {\n    msg.payload = msg.payload.params.on ? 1 : 0; // Set payload based on 'on' value\n} else if (msg.payload.params && typeof msg.payload.params.brightness === 'number') {\n    msg.payload = msg.payload.params.brightness; // Set brightness value\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: 'params.on' not found or not a boolean\");\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -730,10 +730,11 @@
         "finalize": "",
         "libs": [],
         "x": 460,
-        "y": 940,
+        "y": 1020,
         "wires": [
             [
-                "c60b7b529232abaf"
+                "c60b7b529232abaf",
+                "4c023ac09ba64e58"
             ]
         ]
     },
@@ -764,8 +765,8 @@
         "conf": "3a692403905caf38",
         "device": "37409",
         "name": "TV Light",
-        "x": 1340,
-        "y": 900,
+        "x": 1320,
+        "y": 980,
         "wires": []
     },
     {
@@ -777,29 +778,262 @@
         "acknowledge": true,
         "name": "Moon Light",
         "topic": "",
-        "x": 350,
-        "y": 1100,
+        "x": 190,
+        "y": 1360,
         "wires": [
             [
-                "bcad05d6d0f4b575"
+                "2a776cc578a7bbd4"
             ]
         ]
     },
     {
-        "id": "bcad05d6d0f4b575",
-        "type": "debug",
+        "id": "e1a11dfc34f08b75",
+        "type": "ui_slider",
         "z": "dc682c287d7214bc",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 580,
-        "y": 1100,
+        "name": "",
+        "label": "Moonlight Brightness",
+        "tooltip": "",
+        "group": "5514a91992dea871",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "1",
+        "max": "255",
+        "step": 1,
+        "className": "brightness",
+        "x": 780,
+        "y": 1440,
+        "wires": [
+            [
+                "ac0f5493d3a149c4",
+                "b6e8010c7abfcc5c"
+            ]
+        ]
+    },
+    {
+        "id": "41342e9d05cf176e",
+        "type": "ui_switch",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "label": "Moonlight Power",
+        "tooltip": "",
+        "group": "5514a91992dea871",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "state",
+        "x": 770,
+        "y": 1360,
+        "wires": [
+            [
+                "ac0f5493d3a149c4",
+                "f9760c7d1e39e819"
+            ]
+        ]
+    },
+    {
+        "id": "ac0f5493d3a149c4",
+        "type": "wled",
+        "z": "dc682c287d7214bc",
+        "name": "Moon Light",
+        "address": "192.168.31.180",
+        "interval": 0,
+        "x": 1070,
+        "y": 1280,
         "wires": []
+    },
+    {
+        "id": "af5e7b5d9c8e8e2a",
+        "type": "ui_dropdown",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "label": "Moonlight Effects",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "5514a91992dea871",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Rainbow",
+                "value": "Rainbow",
+                "type": "str"
+            },
+            {
+                "label": "Fire",
+                "value": "Fire",
+                "type": "str"
+            },
+            {
+                "label": "Sweep",
+                "value": "Sweep",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 770,
+        "y": 1280,
+        "wires": [
+            [
+                "ac0f5493d3a149c4"
+            ]
+        ]
+    },
+    {
+        "id": "2a776cc578a7bbd4",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "json to int",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n// {\"command\":\"action.devices.commands.BrightnessAbsolute\",\"params\":{\"brightness\":48,\"online\":true}}\n// Output msg.payload will be 1 or 0\n\nif (msg.payload.params && typeof msg.payload.params.on === 'boolean') {\n    msg.payload = msg.payload.params.on; // Set payload based on 'on' value\n} \nelse if (msg.payload.params && typeof msg.payload.params.brightness === 'number') {\n    msg.payload = msg.payload.params.brightness * 2.5; // Set brightness value\n} else {\n    msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: 'params.on' not found or not a boolean\");\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 1360,
+        "wires": [
+            [
+                "af5e7b5d9c8e8e2a",
+                "41342e9d05cf176e",
+                "e1a11dfc34f08b75"
+            ]
+        ]
+    },
+    {
+        "id": "4c023ac09ba64e58",
+        "type": "ui_slider",
+        "z": "dc682c287d7214bc",
+        "name": "",
+        "label": "TV Led Brightness",
+        "tooltip": "",
+        "group": "5514a91992dea871",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "1",
+        "max": "255",
+        "step": 1,
+        "className": "brightness",
+        "x": 770,
+        "y": 1100,
+        "wires": [
+            [
+                "112da435e6767db6",
+                "2bcb7fec331219ec"
+            ]
+        ]
+    },
+    {
+        "id": "112da435e6767db6",
+        "type": "wled",
+        "z": "dc682c287d7214bc",
+        "name": "TV LED",
+        "address": "192.168.31.15",
+        "interval": 0,
+        "x": 1060,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "2bcb7fec331219ec",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "int to json ",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"payload\": 1} or {\"payload\": 0}\n\n// Output msg will be:\n// {\"command\":\"action.devices.commands.BrightnessAbsolute\",\"params\":{\"brightness\":61,\"online\":true}}\n\nif (msg.payload >= 0 && msg.payload <= 255) {\n    msg.payload = {\n        command: \"action.devices.commands.BrightnessAbsolute\",\n        params: {\n            brightness: msg.payload,\n            online: true\n        }\n    };\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: payload should in range from 0 to 255\");\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 1060,
+        "wires": [
+            [
+                "af661fc47acfdc2b"
+            ]
+        ]
+    },
+    {
+        "id": "b6e8010c7abfcc5c",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "int to json ",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"payload\": 1} or {\"payload\": 0}\n\n// Output msg will be:\n// {\"command\":\"action.devices.commands.BrightnessAbsolute\",\"params\":{\"brightness\":61,\"online\":true}}\n\nif (msg.payload >= 0 && msg.payload <= 255) {\n    msg.payload = {\n        command: \"action.devices.commands.BrightnessAbsolute\",\n        params: {\n            brightness: msg.payload,\n            online: true\n        }\n    };\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: payload should be in range from 0 to 255\");\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 1440,
+        "wires": [
+            [
+                "b872e4b18866d9fc"
+            ]
+        ]
+    },
+    {
+        "id": "b872e4b18866d9fc",
+        "type": "google-home-response",
+        "z": "dc682c287d7214bc",
+        "conf": "3a692403905caf38",
+        "device": "37410",
+        "name": "Moon Light",
+        "x": 1330,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "f9760c7d1e39e819",
+        "type": "function",
+        "z": "dc682c287d7214bc",
+        "name": "int to json ",
+        "func": "// Node-RED Function node code\n\n// Input msg example:\n// {\"payload\": 1} or {\"payload\": 0}\n\n// Output msg will be:\n// {\"command\":\"action.devices.commands.OnOff\",\"params\":{\"on\":true,\"online\":true}}\n\nif (msg.payload === true) {\n    msg.payload = {\n        command: \"action.devices.commands.OnOff\",\n        params: {\n            on: true,\n            online: true\n        }\n    };\n} else if (msg.payload === false) {\n    msg.payload = {\n        command: \"action.devices.commands.OnOff\",\n        params: {\n            on: false,\n            online: true\n        }\n    };\n} else {\n    // msg.payload = null; // Handle invalid input\n    node.warn(\"Invalid input: payload should be true or false\");\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 1360,
+        "wires": [
+            [
+                "b872e4b18866d9fc"
+            ]
+        ]
     },
     {
         "id": "3a692403905caf38",
@@ -843,6 +1077,17 @@
         "name": "Home",
         "tab": "be5eefa82ee0f737",
         "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5514a91992dea871",
+        "type": "ui_group",
+        "name": "WLED",
+        "tab": "be5eefa82ee0f737",
+        "order": 2,
         "disp": true,
         "width": 6,
         "collapse": false,
